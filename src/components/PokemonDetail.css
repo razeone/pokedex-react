@@ -1,0 +1,370 @@
+.pokemon-detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.pokemon-detail {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pokemon-detail__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.pokemon-detail__close:hover {
+  background: #ffffff;
+  transform: scale(1.1);
+}
+
+.pokemon-detail__error {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #ef4444;
+}
+
+/* Header */
+.pokemon-detail__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem 1.5rem;
+  gap: 1rem;
+}
+
+@media (min-width: 480px) {
+  .pokemon-detail__header {
+    flex-direction: row;
+    padding: 2.5rem 2rem 1.5rem;
+    gap: 1.5rem;
+  }
+}
+
+.pokemon-detail__image-container {
+  flex-shrink: 0;
+}
+
+.pokemon-detail__image {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.pokemon-detail__info {
+  text-align: center;
+}
+
+@media (min-width: 480px) {
+  .pokemon-detail__info {
+    text-align: left;
+  }
+}
+
+.pokemon-detail__id {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.pokemon-detail__name {
+  margin: 0.25rem 0;
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.pokemon-detail__genus {
+  display: block;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.75rem;
+}
+
+.pokemon-detail__types {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+@media (min-width: 480px) {
+  .pokemon-detail__types {
+    justify-content: flex-start;
+  }
+}
+
+/* Description */
+.pokemon-detail__description {
+  margin: 0;
+  padding: 0 1.5rem 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #4b5563;
+  text-align: center;
+}
+
+@media (min-width: 480px) {
+  .pokemon-detail__description {
+    padding: 0 2rem 1.5rem;
+  }
+}
+
+/* Physical Stats */
+.pokemon-detail__physical {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 1.5rem;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.pokemon-detail__physical-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.pokemon-detail__physical-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.pokemon-detail__physical-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Sections */
+.pokemon-detail__section {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 480px) {
+  .pokemon-detail__section {
+    padding: 1.5rem 2rem;
+  }
+}
+
+.pokemon-detail__section-title {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+/* Stats */
+.pokemon-detail__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pokemon-detail__stat {
+  display: grid;
+  grid-template-columns: 70px 40px 1fr;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pokemon-detail__stat-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.pokemon-detail__stat-value {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: right;
+}
+
+.pokemon-detail__stat-bar {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pokemon-detail__stat-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* Abilities */
+.pokemon-detail__abilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pokemon-detail__ability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #374151;
+  background: #f3f4f6;
+  border-radius: 2rem;
+}
+
+.pokemon-detail__ability--hidden {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.pokemon-detail__ability-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.15rem 0.4rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+}
+
+/* Evolution Chain */
+.pokemon-detail__evolution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pokemon-detail__evo-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pokemon-detail__evo-stage:hover {
+  background: #f3f4f6;
+  transform: translateY(-4px);
+}
+
+.pokemon-detail__evo-stage--current {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.pokemon-detail__evo-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.pokemon-detail__evo-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #374151;
+}
+
+.pokemon-detail__evo-level {
+  font-size: 0.65rem;
+  color: #6b7280;
+}
+
+.pokemon-detail__evo-arrow {
+  color: #9ca3af;
+}
+
+.pokemon-detail__evo-arrow svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Scrollbar Styling */
+.pokemon-detail::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pokemon-detail::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pokemon-detail::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.pokemon-detail::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}

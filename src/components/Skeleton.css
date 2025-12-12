@@ -1,0 +1,175 @@
+/* Base Skeleton Animation */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 0%,
+    #f3f4f6 50%,
+    #e5e7eb 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Card Skeleton */
+.card-skeleton {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-skeleton__image {
+  display: flex;
+  justify-content: center;
+}
+
+.card-skeleton__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-skeleton__id {
+  margin-bottom: 0.25rem;
+}
+
+.card-skeleton__name {
+  margin-bottom: 0.5rem;
+}
+
+.card-skeleton__types {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Grid Skeleton */
+.grid-skeleton {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .grid-skeleton {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-skeleton {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+/* Detail Skeleton */
+.detail-skeleton {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.detail-skeleton__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .detail-skeleton__header {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.detail-skeleton__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .detail-skeleton__info {
+    align-items: flex-start;
+  }
+}
+
+.detail-skeleton__types {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.detail-skeleton__section {
+  margin-bottom: 2rem;
+}
+
+.detail-skeleton__section > .skeleton:first-child {
+  margin-bottom: 1rem;
+}
+
+.detail-skeleton__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-skeleton__stat {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.detail-skeleton__stat .skeleton:first-child {
+  flex-shrink: 0;
+}
+
+.detail-skeleton__stat .skeleton:last-child {
+  flex-grow: 1;
+}
+
+.detail-skeleton__abilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.detail-skeleton__evolution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Search Skeleton */
+.search-skeleton {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-skeleton .skeleton:first-child {
+  flex-grow: 1;
+}
